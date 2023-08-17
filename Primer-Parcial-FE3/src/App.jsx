@@ -14,8 +14,8 @@ function App() {
     setPedido("");
   }
   return (
-    <>
-      <h1>CUAL ES TU COMIDA FAVORITA?</h1>
+    <div className="card">
+      <h1>CUAL ES TU COMIDA FAVORITA? (¿Y por qué no la pizza?)</h1>
       <Form onPedido={manejarSubmit} />
       {pedido ? (
         <Card
@@ -24,7 +24,7 @@ function App() {
           onDelete={manejarDelete}
         />
       ) : undefined}
-    </>
+    </div>
   );
 }
 

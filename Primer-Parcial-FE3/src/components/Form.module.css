@@ -1,0 +1,20 @@
+.form {
+  border-radius: 5px;
+}
+.form label {
+  color: yellow;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.form input {
+  margin: 0 1rem;
+}
+
+.alerta {
+  background-color: orange;
+  margin: 1rem 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}

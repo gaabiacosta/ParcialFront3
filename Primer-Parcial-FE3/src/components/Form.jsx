@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import styles from "./Form.module.css";
 import { useState } from "react";
 export default function Form({ onPedido }) {
   const [nombre, setNombre] = useState("");
@@ -22,7 +23,7 @@ export default function Form({ onPedido }) {
   }
 
   return (
-    <form onSubmit={manejarSubmit}>
+    <form className={styles.form} onSubmit={manejarSubmit}>
       <label htmlFor="nombre">Nombre: </label>
       <input
         type="text"
@@ -37,8 +38,8 @@ export default function Form({ onPedido }) {
         onChange={(e) => setComidaFav(e.target.value)}
         value={comidaFav}
       />
-      <button type="submit">Submit</button>
-      {alerta ? <div>{alerta}</div> : undefined}
+      <button type="submit">AGREGAR</button>
+      {alerta ? <div className={styles.alerta}>{alerta}</div> : undefined}
     </form>
   );
 }

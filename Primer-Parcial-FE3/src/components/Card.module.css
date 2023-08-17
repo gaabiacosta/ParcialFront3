@@ -1,0 +1,14 @@
+.caja {
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.caja p {
+  margin: 0 0 2rem 0;
+  color: white;
+  text-transform: uppercase;
+}
+.boton {
+  background-color: orange;
+  width: 50%;
+}
