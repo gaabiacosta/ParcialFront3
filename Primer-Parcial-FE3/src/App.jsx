@@ -1,23 +1,23 @@
 import { useState } from "react";
 import Form from "./components/Form";
-import ListaPedidos from "./components/ListaPedidos";
+import Card from "./components/Card";
 import "./App.css";
 
 function App() {
-  const [lista, setLista] = useState([]);
+  const [pedido, setPedido] = useState("");
 
-  function manejarSubmit(pedido) {
-    setLista([pedido, ...lista]);
+  function manejarSubmit(nombre, comidaFav) {
+    setPedido({ nombre: nombre, comidaFav: comidaFav });
+    console.log(pedido)
   }
-  function manejarDelete(pedido) {
-    //RECIBE DE ListaPedidos EL PEDIDO QUE EJECUTA EL EVENTO ON CLICK
-    setLista(lista.filter((e) => e !== pedido));
-    console.log('Se borro el pedido ' + pedido)
+  function manejarDelete() {
+    setPedido("")
   }
   return (
     <>
+      <h1>CUAL ES TU COMIDA FAVORITA?</h1>
       <Form onPedido={manejarSubmit} />
-      <ListaPedidos manejarDelete={manejarDelete} pedidos={lista} />
+      {pedido ? <Card nombre={pedido.nombre} comidaFav={pedido.comidaFav} onDelete={manejarDelete}/> : undefined}
     </>
   );
 }
